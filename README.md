@@ -1,13 +1,36 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## ZipWeather: Current Weather Conditions for Your Zip Code
+### Criteria
+- Rails App
+- Consume data via [OpenWeatherMap API](https://openweathermap.org)
+- PostgreSQL database
+- Rspec test suite
+- Error tolerance 
+- Weather data written to databse
 
-Things you may want to cover:
+### User Story
+- User goes to home page
+- User sees form with zip code and a submit button
+- User enters zip code
+- User clicks submit button
+- Page displays current weather conditions
+- Page additionally displays previous 5 weather measurements w/ zipcode 
 
-* Ruby version
+### Display 
+- Zip code
+- General weather conditions (e.g., sunny, rainy, etc.)
+- Atmospheric pressure
+- Temperature (F)
+- Wind (direction + speed)
+- Humidity
+- UTC Timestamp
 
-* System dependencies
+## Documentation 
+- Setup instructions 
+- Decision process 
+- etc. 
+
 
 * Configuration
 
@@ -21,4 +44,3 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
