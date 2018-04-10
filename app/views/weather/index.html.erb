@@ -10,7 +10,29 @@
 
 
 <h3>Recent Conditions</h3>
-  <% @entries.each do |entry|%>
-    <li><%= entry.zip %></li>
-  <% end %>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Zip</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Temp</th>
+      <th>Humidity</th>
+      <th>Pressure</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @entries.each do |entry|%>
+    <tr>
+      <th><%= entry.created_at %></th>
+      <th><%= entry.zip %></th>
+      <th><%= entry.city %></th>
+      <th><%= entry.description %></th>
+      <th><%= entry.temp %> </th>
+      <th><%= entry.humidity %>% </th>
+      <th><%= entry.pressure %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
