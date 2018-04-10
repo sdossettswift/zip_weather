@@ -6,8 +6,8 @@
 - Consume data via [OpenWeatherMap API](https://openweathermap.org)
 - PostgreSQL database
 - Rspec test suite
-- Error tolerance 
-- Weather data written to databse
+- Error tolerance
+- Weather data written to database
 
 ### User Story
 - User goes to home page
@@ -15,9 +15,9 @@
 - User enters zip code
 - User clicks submit button
 - Page displays current weather conditions
-- Page additionally displays previous 5 weather measurements w/ zipcode 
+- Page additionally displays previous 5 weather measurements w/ zipcode
 
-### Display 
+### Display
 - Zip code
 - General weather conditions (e.g., sunny, rainy, etc.)
 - Atmospheric pressure
@@ -26,10 +26,10 @@
 - Humidity
 - UTC Timestamp
 
-## Documentation 
-- Setup instructions 
-- Decision process 
-- etc. 
+## Documentation
+- Setup instructions
+- Decision process
+- etc.
 
 
 * Configuration
@@ -43,4 +43,3 @@
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
-
