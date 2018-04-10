@@ -7,12 +7,15 @@ class WeatherController < ApplicationController
     @zip = params[:zip]
     @entry = Entry.new
     @entry.zip = params[:zip]
+    api_key=ENV["API_KEY"]
     zip = params[:zip]
     url = "http://api.openweathermap.org/data/2.5/weather?q=#{zip},us&units=imperial&appid=#{api_key}"
     results = JSON.parse(Http.get(url).body)
     @entry.city = results["name"]
     @entry.humidity = results["main"]["humidity"]
     @entry.pressure = results["main"]["pressure"]
+    @entry.wind_speed = results["wind"]["speed"]
+    @entry.wind_direction = results["wind"]["deg"]
     @entry.temp = results["main"]["temp"]
     @entry.description = results["weather"][0]["description"]
     @entry.sunset = results["sys"]["sunset"]
