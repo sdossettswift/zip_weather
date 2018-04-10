@@ -31,8 +31,7 @@
 
 4.10
 - notes:
-  - temp is in kelvin -> need to display F
-  - figure out what's wrong w/ wind direction/wind_speed
+  - temp is in kelvin -> need to display F (fixed by passing imperial unit w/ api call)
+  - figure out what's wrong w/ wind direction/wind_speed (fixed-- need to convert deg -> cardinal direction)
   - look into tucking api key away -> look back @ Figaro setup b/c  key isn't being passed in API call
   - create session, add current_location to session data; display current conditions if session data exists
-  
