@@ -1,0 +1,9 @@
+<h1>Current Weather</h1>
+
+<%= form_tag ('/locate') do %>
+
+     <%= label_tag :zip %>
+     <%= text_field_tag :zip, "",  placeholder: "Enter Zip Code" %>
+     <%= submit_tag "Get Weather" %>
+
+ <%end%>
