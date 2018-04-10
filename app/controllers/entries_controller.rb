@@ -8,15 +8,13 @@ class EntriesController < ApplicationController
   def new
     @entry = Entry.new
     @zip = params[:zip]
-
   end
 
   def create
-    zip = params["entry"]["zip"]
-
     @entry = Entry.new
-
+    zip = params["entry"]["zip"]
     api_key=ENV["API_KEY"]
+
     url = "http://api.openweathermap.org/data/2.5/weather?q=#{zip},us&units=imperial&appid=#{api_key}"
     results = JSON.parse(Http.get(url).body)
     @entry.zip = zip
@@ -32,15 +30,12 @@ class EntriesController < ApplicationController
     @entry.icon = results["weather"][0]["icon"]
     @entry.main = results["weather"][0]["main"]
     @entry.clouds = results["clouds"]["all"]
-    # if @entry.save
-    #   redirect_to root_path
-
 
     if @entry.save
       redirect_to entries_path,
       notice: 'Weather successfully logged.'
     else
-      render :index,
+      render :new,
       notice: "Something was wrong with your request."
     end
   end
