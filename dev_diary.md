@@ -28,4 +28,11 @@
     - api will return JSON object
     - will create @entry w/ data from JSON object
     - redirect
-    
+
+4.10
+- notes:
+  - temp is in kelvin -> need to display F
+  - figure out what's wrong w/ wind direction/wind_speed
+  - look into tucking api key away -> look back @ Figaro setup b/c  key isn't being passed in API call
+  - create session, add current_location to session data; display current conditions if session data exists
+  
