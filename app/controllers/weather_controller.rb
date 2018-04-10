@@ -4,6 +4,14 @@ class WeatherController < ApplicationController
   end
 
   def locate
+    @zip = params[:zip]
+    @entry = Entry.new
+    @entry.zip = params[:zip]
+    if @entry.save
+      redirect_to root_path
+    else
+      render('locate')
+    end
   end
 
 end

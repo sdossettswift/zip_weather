@@ -7,3 +7,7 @@
      <%= submit_tag "Get Weather" %>
 
  <%end%>
+
+<% @entries.each do |entry|%>
+  <li><%= entry.zip %></li>
+<% end %>
