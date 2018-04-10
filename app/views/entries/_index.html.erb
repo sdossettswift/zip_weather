@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Zip</th>
+      <th>City</th>
+      <th>Description</th>
+      <th>Temp</th>
+      <th>Humidity</th>
+      <th>Pressure</th>
+      <th>Wind Speed </th>
+      <th>Wind Direction </th>
+      <th>Date</th>
+    </tr>
+  </thead>
+    <tbody>
+    <% @entries.each do |entry|%>
+    <tr>
+      <th><%= entry.zip %></th>
+      <th><%= entry.city %></th>
+      <th><%= entry.description %></th>
+      <th><%= entry.temp %> </th>
+      <th><%= entry.humidity %>% </th>
+      <th><%= entry.pressure %></th>
+      <th><%= entry.wind_speed%></th>
+      <th><%= entry.wind_direction%></th>
+      <th><%= entry.created_at %></th>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
