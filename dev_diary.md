@@ -35,3 +35,6 @@
   - figure out what's wrong w/ wind direction/wind_speed (fixed-- need to convert deg -> cardinal direction)
   -(done) look into tucking api key away -> look back @ Figaro setup b/c  key isn't being passed in API call
   - create session, add current_location to session data; display current conditions if session data exists
+4.10 Morning light!
+- Implemented bootstrap in a new branch. Brought in a google font. Broke components out into partials. 
+- It occurred to me that this is not a very rails-y way to do things. Previously, I was thinking of a super simple approach I have taken before (coffeeLocator, for example) -- but this data did not persist to a db. As such, we used simple form_tags, not a rails form_for, etc.

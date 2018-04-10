@@ -1,43 +1,5 @@
-<h1>Weather</h1>
+<h4>Get Current Weather</h4>
+<%= render('form')%>
 
-<%= form_tag ('/locate') do %>
-
-     <%= label_tag :zip %>
-     <%= text_field_tag :zip, "",  placeholder: "Enter Zip Code" %>
-     <%= submit_tag "Get Weather" %>
-
- <%end%>
-
-
-<h3>Recent Conditions</h3>
-<table>
-  <thead>
-    <tr>
-      <th>Zip</th>
-      <th>City</th>
-      <th>Description</th>
-      <th>Temp</th>
-      <th>Humidity</th>
-      <th>Pressure</th>
-      <th>Wind Speed </th>
-      <th>Wind Direction </th>
-      <th>Date</th>
-
-    </tr>
-  </thead>
-    <tbody>
-    <% @entries.each do |entry|%>
-    <tr>
-      <th><%= entry.zip %></th>
-      <th><%= entry.city %></th>
-      <th><%= entry.description %></th>
-      <th><%= entry.temp %> </th>
-      <th><%= entry.humidity %>% </th>
-      <th><%= entry.pressure %></th>
-      <th><%= entry.wind_speed%></th>
-      <th><%= entry.wind_direction%></th>
-      <th><%= entry.created_at %></th>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<h4>Recent Conditions</h4>
+<%= render('index') %>
