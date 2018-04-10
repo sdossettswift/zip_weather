@@ -1,4 +1,4 @@
-<h1>Current Weather</h1>
+<h1>Weather</h1>
 
 <%= form_tag ('/locate') do %>
 
@@ -8,6 +8,9 @@
 
  <%end%>
 
-<% @entries.each do |entry|%>
-  <li><%= entry.zip %></li>
-<% end %>
+
+<h3>Recent Conditions</h3>
+  <% @entries.each do |entry|%>
+    <li><%= entry.zip %></li>
+  <% end %>
+</div>

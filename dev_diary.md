@@ -19,4 +19,13 @@
         - compatible w/ OpenWeatherMap API - mappings [here](http://erikflowers.github.io/weather-icons/api-list.html)
   - Framework? Bootstrap would be simple enough, perhaps overkill
 - setup Rspec by running  `rails generate rspec:install` command
-- 
+
+4.9.2018
+- APP PLAN:
+  - Root page: Weather#Index
+    - there will be a form to enter zip; post to /locate
+    - app will dispatch API call passing zip as query parameter
+    - api will return JSON object
+    - will create @entry w/ data from JSON object
+    - redirect
+    
