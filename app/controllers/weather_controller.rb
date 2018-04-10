@@ -1,6 +1,6 @@
 class WeatherController < ApplicationController
   def index
-    @entries = Entry.all
+    @entries = Entry.five_latest
   end
 
   def locate
@@ -11,6 +11,7 @@ class WeatherController < ApplicationController
       redirect_to root_path
     else
       render('locate')
+      ## TODO: add error messages
     end
   end
 

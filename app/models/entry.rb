@@ -1,4 +1,4 @@
 class Entry < ApplicationRecord
-  #TODO: create named scope -> 5 most recent (per specs )
+  scope :five_latest, -> { order(created_at: :desc).limit(5) }
   #TODO: add validation -> zip code length(5); regex(5digits) (per specs )
 end
