@@ -17,6 +17,12 @@ class EntriesController < ApplicationController
     api_key=ENV["API_KEY"]
     url = "http://api.openweathermap.org/data/2.5/weather?q=#{zip},us&units=imperial&appid=#{api_key}"
     results = JSON.parse(Http.get(url).body)
+      if results["cod"]=="404"
+        redirect_to entries_path,
+        notice: 'Zipcode not recognized. Please try again.'
+        return
+      end
+
     @entry.zip = zip
 
     if @entry.save(entry_params)
