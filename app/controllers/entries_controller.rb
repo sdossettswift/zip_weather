@@ -2,6 +2,8 @@ class EntriesController < ApplicationController
   def index
     @entries = Entry.five_latest
     @entry = Entry.new
+    @current_location = session[:location]
+    @latest = Entry.last
 
   end
 
@@ -17,10 +19,12 @@ class EntriesController < ApplicationController
 
     url = "http://api.openweathermap.org/data/2.5/weather?q=#{zip},us&units=imperial&appid=#{api_key}"
     results = JSON.parse(Http.get(url).body)
+
     @entry.zip = zip
 
 
     if @entry.save(entry_params)
+      session[:location]=params["entry"]["zip"]
       @entry.city = results["name"]
       @entry.humidity = results["main"]["humidity"]
       @entry.pressure = results["main"]["pressure"]
