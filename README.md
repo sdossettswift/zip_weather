@@ -27,19 +27,12 @@
 - UTC Timestamp
 
 ## Documentation
-- Setup instructions
-- Decision process
-- etc.
+- Setup instructions: This assumes you are set up with Rails, Ruby, PostgreSQL
+  - Run bundle to install dependencies `bundle`
+  - Create database `rails db:create`
+  - Run test suite `rspec spec` || `rake`
+  - Start Server `rails s`
 
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+- You can also check out the Heroku instance [here](https://zip-weather.herokuapp.com/)
+- TravisCI build info available [here](https://travis-ci.org/sdossettswift/zip_weather)
+- Code is available on github [here](https://github.com/sdossettswift/zip_weather)
