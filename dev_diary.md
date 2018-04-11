@@ -1,9 +1,4 @@
 # DEV DIARY
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
-
 4.5.2018
 - [x] Set up empty rails app
 - [x] Created Readme with detailed specs, basic user story
@@ -47,6 +42,6 @@
 - [x] Added @current_location to session data; added button to reset session data (and therefore reset current location)
 - [x]  Added additional scope to @entries to prevent incomplete entries from showing up in history
 - I realized that by moving away from the WeatherController w/ the locate button, what I really did was jump to create an entry w/out first having received the desired payload, or even a successful zip validation. The model validations for zip length and format do a good job at weeding out malformed zip codes; however, when a 5-digit zip-code lookalike that isn't sanctioned by the US post office... that's where things fall apart. For the purposes of displaying only valid @entries, I implemented a scope called "has_city". If the entry does not have a value for city, it is not a complete record, and should not appear in the results. This is imperfect. What I really need is to not create an entry until I get a complete API response.
-- Instead of scrapping this and going back to the previous approach, I can satisfy the requirements by failing gracefully, and redirecting to a form w/ error messages displayed.
+- [ ] Instead of scrapping this and going back to the previous approach, I can satisfy the requirements by failing gracefully, and redirecting to a form w/ error messages displayed.
 - [x] I also set up TravisCI and Heroku to manage CI testing and deployment. Upon a successful TravisCI build, fresh code will be deployed to Heroku.
 - In order to protect the API key, I ended up using Figaro and Dotenv. My API key is where it needs to be for the sake of deployment, but it is not in source control.
