@@ -1,13 +1,7 @@
 <%= form_for @entry do |f| %>
-<div class="form group">
-  <div class="field">
+
     <%= f.text_field :zip, id: :entry_zip, placeholder: "Enter 5 Digit Zip" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-
-</div>
+    <%= f.submit class: "btn btn-sm btn-default"%>
 
 <% end %>

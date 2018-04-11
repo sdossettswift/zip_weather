@@ -1,28 +1,31 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Zip</th>
-      <th>City</th>
-      <th>Description</th>
-      <th>Temp</th>
-      <th>Humidity</th>
-      <th>Pressure</th>
-      <th>Wind </th>
-      <th>Date</th>
-    </tr>
-  </thead>
-    <tbody>
-    <% @entries.each do |entry|%>
-    <tr>
-      <th><%= entry.zip %></th>
-      <th><%= entry.city %></th>
-      <th><%= entry.description %></th>
-      <th><%= entry.temp %> F </th>
-      <th><%= entry.humidity %>% </th>
-      <th><%= entry.pressure %></th>
-      <th><%= entry.wind_speed%> <%= entry.wind_direction_in_words%></th>
-      <th><%= entry.created_at %></th>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Zip</th>
+        <th>City</th>
+        <th>Description</th>
+        <th>Temp</th>
+        <th>Humidity</th>
+        <th>Pressure</th>
+        <th>Wind </th>
+        <th>Date</th>
+      </tr>
+    </thead>
+      <tbody>
+      <% @entries.each do |entry|%>
+      <tr>
+        <th><%= entry.zip %></th>
+        <th><%= entry.city %></th>
+        <th><%= entry.description %></th>
+        <th><%= entry.temp %> F </th>
+        <th><%= entry.humidity %>% </th>
+        <th><%= entry.pressure %></th>
+        <th><%= entry.wind_speed%> <%= entry.wind_direction_in_words%></th>
+        <th><%= entry.created_at %></th>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>

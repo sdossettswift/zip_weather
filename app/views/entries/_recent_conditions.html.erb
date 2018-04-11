@@ -1,19 +1,27 @@
+<div class="container">
+  <h2>Current Conditions in <%= @latest.city %></h2>
+  <hr>
 
-<div class="card">
-  <div class="card-body">
-      <h3>Current Conditions in <%= @latest.city %></h3>
-      <ul>
-        <li><%= @latest.zip %></li>
-        <li><%= @latest.city %></li>
-        <li><%= @latest.description %></li>
-        <li><%= @latest.temp %> F </li>
-        <li><%= @latest.humidity %>% </li>
-        <li><%= @latest.pressure %></li>
-        <li><%= @latest.wind_speed%> <%= @latest.wind_direction_in_words%></li>
-        <li>As of <%= time_ago_in_words(@latest.created_at) %> ago </li>
-          <%= form_tag("/clear_session", :method => "delete") do %>
-            <%= submit_tag("Clear Location") %>
-            <% end %>
-      </ul>
-  </div>
+    <h3><%= @latest.description.upcase %></h3>
+    <div class="row">
+      <div class="col-md-3">
+        <h4>TEMPERATURE: <%= @latest.temp %> F </h4>
+        <h4>HUMIDITY: <%= @latest.humidity %>% </h4>
+        <h4>PRESSURE: <%= @latest.pressure %></h4>
+      </div>
+      <div class="col-md-3">
+        <h4>WIND: <%= @latest.wind_speed%> <%= @latest.wind_direction_in_words%></h4>
+        <h4><%= @latest.zip %> | <%= @latest.city %> </h4>
+        <h5></h5>
+        <p>As of <%= time_ago_in_words(@latest.created_at) %> ago </p>
+      </div>
+
+
+    </div>
+
+
+
+      <%= form_tag("/clear_session", :method => "delete") do %>
+        <%= submit_tag("Clear Location", :class=>"btn btn-sm btn-default") %>
+        <% end %>
 </div>

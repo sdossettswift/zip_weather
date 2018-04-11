@@ -1,18 +1,19 @@
-<h4>Get Current Weather</h4>
-<%= render('form')%>
-
 
 <div class="row">
-  <div class="col-md-4">
-
-  </div>
-  <div class="col-md-4">
+  <div class="col-md-8">
 
     <% if @current_location %>
-    <%= render('recent_conditions')%>
+    <div class="well">
+      <%= render('recent_conditions')%>
+    </div>
+
     <% end %>
   </div>
   <div class="col-md-4">
+    <div class="well">
+    <%= render('form')%>
+    </div>
+
 
   </div>
 
