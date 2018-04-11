@@ -22,39 +22,26 @@ RSpec.describe Entry, type: :model do
   end
 
   describe 'Validations' do
-    xit "does not permit invalid characters in zipcodes" do
+    it "does not permit invalid characters in zipcodes" do
+     @e= Entry.create(:zip=>"THISISNOTAZIP")
+     expect(@e.errors.count).to eq(2)
+
     end
 
-    xit "does not permit zipcodes that are too long" do
+    it "does not permit zipcodes that are too long" do
+       @e = Entry.create(:zip=>"88888888")
+       expect(@e.errors.count).to eq(1)
     end
 
-    xit "does not permit zipcodes that are too short" do
+    it "does not permit zipcodes that are too short" do
+      @e = Entry.create(:zip=>"33")
+      expect(@e.errors.count).to eq(2)
     end
 
-    xit "does allow properly formed zipcodes" do
+    it "does allow properly formed zipcodes" do
+      @e = Entry.create(:zip=>"77005")
+      expect(@e.errors.count).to eq(0)
     end
-  end
-
-  describe 'Attributes' do
-
-    xit "accepts values for humidity" do
-    end
-
-    xit "accepts values for temperature" do
-    end
-
-    xit "accepts values for wind speed" do
-    end
-
-    xit "accepts values for wind direction" do
-    end
-
-    xit "accepts values for general description" do
-    end
-
-    xit "accepts values for pressure" do
-    end
-
   end
 
     describe 'Conversion of Wind Degrees into Directions' do
