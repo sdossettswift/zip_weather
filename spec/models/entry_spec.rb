@@ -55,4 +55,16 @@ RSpec.describe Entry, type: :model do
     end
 
   end
+
+    describe 'Conversion of Wind Degrees into Directions' do
+      xit 'correctly determines N direction '
+    end
+      xit 'correctly determines S direction '
+    end
+      xit 'correctly determines E direction '
+    end
+      xit 'correctly determines W direction '
+    end 
+  end
+
 end
