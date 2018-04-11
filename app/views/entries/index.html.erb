@@ -1,11 +1,8 @@
 <h4>Get Current Weather</h4>
 <%= render('form')%>
-
 <% if @current_location %>
-<div class="container">
-  <th>Most Recent Location: <%= @current_location %></th>
-    <h3><%= @latest.temp %> <h3>
-</div>
+<%= render('recent_conditions')%>
+<%= render('clear_location') %>
 <% end %>
 <h4>Recent Conditions</h4>
 <%= render('index') %>
