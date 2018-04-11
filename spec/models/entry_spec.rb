@@ -91,61 +91,6 @@ RSpec.describe Entry, type: :model do
       expect(@entry.wind_direction_in_words).to eq("NE")
     end
 
-
-
-
   end
 
 end
-
-# it 'will match class instances with #have_attributes' do
-#   class Car
-#     attr_accessor :make, :year, :color
-#   end
-#   car = Car.new
-#   car.make = 'Dodge'
-#   car.year = 2010
-#   car.color = 'green'
-#
-#   expect(car).to have_attributes(:color => 'green')
-#   expect(car).to have_attributes(
-#     :make => 'Dodge', :year => 2010, :color => 'green'
-#   )
-# end
-
-#
-# if (0.00..11.25).include?(degrees)
-#   return "N"
-# elsif (11.25..33.75).include?(degrees)
-#   return "NNE"
-# elsif (33.75..56.25).include?(degrees)
-#   return "NE"
-# elsif (56.25..78.75).include?(degrees)
-#   return "ENE"
-# elsif (78.75..101.25).include?(degrees)
-#   return "E"
-# elsif (101.25..123.75).include?(degrees)
-#   return "ESE"
-# elsif (123.75..146.25).include?(degrees)
-#   return "SE"
-# elsif (146.25..168.75).include?(degrees)
-#   return "SSE"
-# elsif (168.75..191.25).include?(degrees)
-#   return "S"
-# elsif (191.25..213.75).include?(degrees)
-#   return "SSW"
-# elsif (213.75..236.25).include?(degrees)
-#   return "SW"
-# elsif (236.25..258.75).include?(degrees)
-#   return "WSW"
-# elsif (258.75..281.25).include?(degrees)
-#   return "W"
-# elsif (281.25..303.75).include?(degrees)
-#   return "WNW"
-# elsif (303.75..326.25).include?(degrees)
-#   return "NW"
-# elsif (326.25..348.75).include?(degrees)
-#   return "NNW"
-# elsif (348.75..360).include?(degrees)
-#   return "N"
-# else
