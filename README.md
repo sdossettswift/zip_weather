@@ -1,5 +1,5 @@
 # README
-https://travis-ci.org/sdossettswift/zip_weather.svg?branch=master
+![Travis CI](https://travis-ci.org/sdossettswift/zip_weather.svg?branch=master)
 ## ZipWeather: Current Weather Conditions for Your Zip Code
 ### Criteria
 - Rails App
