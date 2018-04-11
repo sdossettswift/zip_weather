@@ -3,12 +3,14 @@ require 'rails_helper'
 RSpec.describe Entry, type: :model do
   describe "Scopes" do
     let!(:entries) do
-      [Entry.create(:zip => '77019', :temp => 70.5),
-       Entry.create(:zip => '77005', :temp => 72),
-       Entry.create(:zip => '77002', :temp => 89),
-       Entry.create(:zip => '77007', :temp => 61),
-       Entry.create(:zip => '77098', :temp => 64),
-       Entry.create(:zip => '76710', :temp => 87.1),
+      [Entry.create(:zip => '77019', :city => 'Houston'),
+       Entry.create(:zip => '77005', :city => 'Houston'),
+       Entry.create(:zip => '77002', :city => 'Houston'),
+       Entry.create(:zip => '77007', :city => 'Houston'),
+       Entry.create(:zip => '77098'),
+       Entry.create(:zip => '76710'),
+       Entry.create(:zip => '76710'),
+
       ]
     end
 
@@ -16,8 +18,16 @@ RSpec.describe Entry, type: :model do
       expect(Entry.five_latest.length).to match(5)
     end
 
+    it "named scope 'has_city' limits results to four" do
+      expect(Entry.has_city.length).to match(4)
+    end
+
+    it "named scope 'has_city'.'five_latest' limits results to five" do
+      expect(Entry.has_city.five_latest.length).to match(4)
+    end
+
     it "without named scope, displays all" do
-      expect(Entry.all.length).to match(6)
+      expect(Entry.all.length).to match(7)
     end
   end
 
