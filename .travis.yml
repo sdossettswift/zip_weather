@@ -1,0 +1,17 @@
+language: ruby
+rvm:
+  - 2.3.0
+addons:
+  postgresql: "9.4"
+before_script:
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.yml.travis config/database.yml
+deploy:
+  provider: heroku
+  api_key:
+    secure: DmhKamxYfkpAchi4fsd+eP9ibedDnhwfe+1frmJlUTMTEAMqzdVmsPiLJb5gH39FiuTU8ilz/BtF3jcjhr7w4hDWkTJBnTpA3cddh4B7FU1fxPu95bmPsJ9FZJ8nPBgg7e1Cz5hA50uFW1mURii6s5S9eEDsKPeVhzPFVCLnVgrmdDohKUo4oVHqZXhWJ1FnrCrkZ1SA/SUCcIJ2+x3qqHlI1Ryt6MMuIt+NcEdaGZY2ABMt+qpDEAz46S/rzt12qfAl/JxxOth+h3vYL1INpJobrmD1SjmQMxdBfA8GRf2QHgBINBxxfWvLpWEgqxWDKbFLQp9YLNruk2avJ2eOblO7Tl4isPvhIpz1luv3b56lZiKpQ0xvamDJP7YX5wIDMmJ2KanY+cekFoha/BFFW4tn5chRkAGzr3m8aCfsQvWKE1mBW/uZdz0P99bDbeSOw+LMeysqFa6eYU2SCLpPgbYT2tRgxvrGIzD6vdr9cqg7WMqK3tNDqImhoAN80dqkLrhaO3fDzcAQBrOMzYjlGdyxq5fJVN6fLj1pNKGCL08KC1PkgIOSfas2Zi1syqL7vEpIvtbDE8Z5ZjTJfOhEc8ha0RKpvhxORVBRpM0O3sdnXROk3o3aCFs7/qcZIoLaW65wtHc/K35xasGlck2bWaZ0SLyu1x5P4dffC0rDHRc=
+  app: zip-weather
+  on:
+    repo: sdossettswift/zip_weather
+  run:
+  - rake db:migrate
