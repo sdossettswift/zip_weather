@@ -36,3 +36,5 @@
 - You can also check out the Heroku instance [here](https://zip-weather.herokuapp.com/)
 - TravisCI build info available [here](https://travis-ci.org/sdossettswift/zip_weather)
 - Code is available on github [here](https://github.com/sdossettswift/zip_weather)
+
+![Screenshot](zip-weather-screenshot.png)
