@@ -1,1 +1,19 @@
-<%= @latest.zip %>
+
+<div class="card">
+  <div class="card-body">
+      <h3>Current Conditions in <%= @latest.city %></h3>
+      <ul>
+        <li><%= @latest.zip %></li>
+        <li><%= @latest.city %></li>
+        <li><%= @latest.description %></li>
+        <li><%= @latest.temp %> F </li>
+        <li><%= @latest.humidity %>% </li>
+        <li><%= @latest.pressure %></li>
+        <li><%= @latest.wind_speed%> <%= @latest.wind_direction_in_words%></li>
+        <li>As of <%= time_ago_in_words(@latest.created_at) %> ago </li>
+          <%= form_tag("/clear_session", :method => "delete") do %>
+            <%= submit_tag("Clear Location") %>
+            <% end %>
+      </ul>
+  </div>
+</div>
