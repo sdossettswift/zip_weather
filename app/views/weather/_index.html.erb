@@ -7,8 +7,7 @@
       <th>Temp</th>
       <th>Humidity</th>
       <th>Pressure</th>
-      <th>Wind Speed </th>
-      <th>Wind Direction </th>
+      <th>Wind </th>
       <th>Date</th>
     </tr>
   </thead>
@@ -18,11 +17,10 @@
       <th><%= entry.zip %></th>
       <th><%= entry.city %></th>
       <th><%= entry.description %></th>
-      <th><%= entry.temp %> </th>
+      <th><%= entry.temp %> F </th>
       <th><%= entry.humidity %>% </th>
       <th><%= entry.pressure %></th>
-      <th><%= entry.wind_speed%></th>
-      <th><%= entry.wind_direction%></th>
+      <th><%= entry.wind_speed%> <%= entry.wind_direction_in_words%></th>
       <th><%= entry.created_at %></th>
     </tr>
     <% end %>
