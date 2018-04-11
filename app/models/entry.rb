@@ -2,6 +2,7 @@ class Entry < ApplicationRecord
   scope :five_latest, -> { order(created_at: :desc).limit(5) }
   validates_length_of :zip, :is => 5
   validates_format_of :zip, :with => /\d{5}/
+  scope :has_city, -> {where.not(city: nil)}
 
   def wind_direction_in_words
     # based on
